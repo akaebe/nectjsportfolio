@@ -13,9 +13,8 @@ export function HeroSection() {
   
   const morphingTexts = [
     "Frontend Developer",
-    "UI/UX Designer", 
-    "Creative Coder",
-    "Digital Artist"
+    "Debugger",
+    "UI/UX"
   ];
 
   useEffect(() => {
@@ -84,7 +83,7 @@ export function HeroSection() {
         </div>
 
         {/* Status Badge */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.8 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -94,12 +93,12 @@ export function HeroSection() {
             <div className="w-2 h-2 bg-green-400 rounded-full pulse-glow" />
             <span className="text-sm font-medium text-white/80">Available for work</span>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Morphing Role Text */}
         <motion.div
           ref={morphingTextRef}
-          className="mb-6 h-8"
+          className="mb-4 h-8 mt-20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -122,7 +121,7 @@ export function HeroSection() {
           className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 text-white text-glow"
           style={{ fontFamily: 'Inter, sans-serif' }}
         >
-          Alex Chen
+          Ebenezer
         </h1>
 
         {/* Subtitle with typewriter effect */}
@@ -199,7 +198,7 @@ export function HeroSection() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        {/* <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -213,7 +212,7 @@ export function HeroSection() {
             <span className="text-sm font-medium">Scroll to explore</span>
             <ChevronDown className="w-6 h-6" />
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Animated background elements */}

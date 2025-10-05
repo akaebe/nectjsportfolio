@@ -11,18 +11,8 @@ const skillCategories = [
     skills: [
       { name: "React/Next.js", level: 98, icon: "⚛️" },
       { name: "TypeScript", level: 95, icon: "📘" },
-      { name: "Vue.js/Nuxt.js", level: 90, icon: "💚" },
-      { name: "Svelte/SvelteKit", level: 85, icon: "🧡" },
-    ]
-  },
-  {
-    title: "Animation & 3D",
-    icon: "✨",
-    skills: [
-      { name: "GSAP", level: 96, icon: "🎭" },
-      { name: "Framer Motion", level: 94, icon: "🎪" },
-      { name: "Three.js", level: 88, icon: "🎮" },
-      { name: "Anime.js", level: 92, icon: "🎨" },
+      { name: "Tanstack/React Query", level: 60, icon: "💚" },
+      { name: "Redux/Zustand", level: 80, icon: "🧡" },
     ]
   },
   {
@@ -30,18 +20,18 @@ const skillCategories = [
     icon: "⚙️",
     skills: [
       { name: "Node.js", level: 87, icon: "🟢" },
-      { name: "Python", level: 82, icon: "🐍" },
-      { name: "PostgreSQL", level: 85, icon: "🐘" },
-      { name: "MongoDB", level: 80, icon: "🍃" },
+      { name: "Python", level: 60, icon: "🐍" },
+      { name: "MySQL", level: 65, icon: "🐘" },
+      { name: "MongoDB/Prisma", level: 80, icon: "🍃" },
     ]
   },
   {
     title: "Tools & Platforms",
     icon: "🛠️",
     skills: [
-      { name: "Docker", level: 83, icon: "🐳" },
-      { name: "AWS/Vercel", level: 86, icon: "☁️" },
-      { name: "Figma", level: 91, icon: "🎯" },
+      { name: "Vite", level: 83, icon: "🐳" },
+      { name: "Azure/Vercel", level: 56, icon: "☁️" },
+      { name: "Postman/MCP", level: 91, icon: "🎯" },
       { name: "Git/GitHub", level: 94, icon: "📚" },
     ]
   }
@@ -201,7 +191,7 @@ export function SkillsSection() {
         </div>
 
         {/* Floating Skill Icons */}
-        <div className="relative h-40 overflow-hidden">
+        {/* <div className="relative h-40 overflow-hidden">
           {['🚀', '💡', '⚡', '🎨', '🔧', '📱', '🌟', '🎯', '🔥', '💎'].map((icon, index) => (
             <motion.div
               key={index}
@@ -225,7 +215,7 @@ export function SkillsSection() {
               {icon}
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
         {/* Interactive Skill Visualization */}
         <motion.div
@@ -236,22 +226,22 @@ export function SkillsSection() {
           viewport={{ once: true }}
         >
           <div className="glass rounded-2xl p-8 border border-white/10 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-white">Years of Experience</h3>
+            <h3 className="text-2xl font-bold mb-4 text-white">1 Year of Experience</h3>
             <div className="flex items-center justify-center gap-8">
               <div className="text-center">
-                <div className="text-4xl font-black text-purple-400 mb-2">5+</div>
+                <div className="text-4xl font-black text-purple-400 mb-2">4+</div>
                 <div className="text-sm text-white/60">Frontend Development</div>
               </div>
               <div className="w-px h-12 bg-white/20" />
               <div className="text-center">
-                <div className="text-4xl font-black text-pink-400 mb-2">50+</div>
+                <div className="text-4xl font-black text-pink-400 mb-2">7+</div>
                 <div className="text-sm text-white/60">Projects Completed</div>
               </div>
-              <div className="w-px h-12 bg-white/20" />
-              <div className="text-center">
+              {/* <div className="w-px h-12 bg-white/20" /> */}
+              {/* <div className="text-center">
                 <div className="text-4xl font-black text-cyan-400 mb-2">100%</div>
                 <div className="text-sm text-white/60">Client Satisfaction</div>
-              </div>
+              </div> */}
             </div>
           </div>
         </motion.div>

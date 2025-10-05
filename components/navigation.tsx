@@ -40,7 +40,7 @@ export function Navigation() {
     { name: 'Work', href: '#work' },
     { name: 'Skills', href: '#skills' },
     { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    // { name: 'Contact', href: '#contact' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -72,7 +72,7 @@ export function Navigation() {
             data-magnetic
           >
             <div className="text-3xl font-black bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-              AC
+              E
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </motion.div>
@@ -109,7 +109,7 @@ export function Navigation() {
 
           <div className="flex items-center space-x-4">
             {/* Download CV Button */}
-            <Button
+            {/* <Button
               size="sm"
               className="hidden sm:flex bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 px-4 py-2"
               data-cursor-hover
@@ -117,7 +117,7 @@ export function Navigation() {
             >
               <Download className="w-4 h-4 mr-2" />
               CV
-            </Button>
+            </Button> */}
 
             {/* Theme Toggle */}
             {/* <Button
