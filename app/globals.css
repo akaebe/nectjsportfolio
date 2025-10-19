@@ -86,13 +86,13 @@
 }
 
 /* Enhanced Custom Cursor */
-* {
+/* * {
   cursor: none;
-}
+} */
 
-a, button, [data-cursor-hover], [data-magnetic] {
+/* a, button, [data-cursor-hover], [data-magnetic] {
   cursor: none;
-}
+} */
 
 /* Magnetic Effect */
 .magnetic {
@@ -245,17 +245,17 @@ html {
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
-  .custom-cursor, .cursor-trail {
+  /* .custom-cursor, .cursor-trail {
     display: none !important;
   }
-  
-  * {
+   */
+  /* * {
     cursor: auto !important;
-  }
+  } */
   
-  .magnetic {
+  /* .magnetic {
     transform: none !important;
-  }
+  } */
 }
 
 /* Performance optimizations */

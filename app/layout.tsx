@@ -34,7 +34,7 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange={false}
         >
-          <MagneticCursor />
+          {/* <MagneticCursor /> */}
           <ScrollProgress />
           {children}
         </ThemeProvider>
