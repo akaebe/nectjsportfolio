@@ -10,28 +10,28 @@ import { Button } from '@/components/ui/button';
 const projects = [
   {
     id: 1,
-    title: "NeuroFlow Dashboard",
-    category: "SaaS Platform",
-    description: "AI-powered analytics dashboard with real-time data visualization and predictive insights",
-    longDescription: "A comprehensive SaaS platform featuring advanced AI analytics, real-time data processing, and interactive visualizations. Built with cutting-edge technologies to deliver exceptional performance and user experience.",
-    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tech: ["React", "TypeScript", "D3.js", "WebGL", "Node.js", "PostgreSQL"],
-    github: "#",
-    live: "#",
-    featured: true,
+    title: "Election Agent Activity Analysis Dashboard",
+    category: "Analytics",
+    description: "A React-powered analytics dashboard delivering real-time, data-driven insights into BLA’s activities and performance trends.",
+    longDescription: "A React-based analytics dashboard that transforms complex political data into clear, actionable insights. It visualizes BLA’s activities and performance metrics using interactive charts and heatmaps, offering real-time tracking and trend analysis through a responsive, modular interface.",
+    image: "https://images.pexels.com/photos/95916/pexels-photo-95916.jpeg?_gl=1*6hs1nq*_ga*MzkyODgzNDcuMTcxOTYwMTQyMQ..*_ga_8JE65Q40S6*czE3NjA4ODE5NzgkbzEwJGcxJHQxNzYwODgyMjU2JGozOCRsMCRoMA..",
+    tech: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Chart.js","Vite"],
+    github: "https://github.com/akaebe/analyticsDashBoard",
+    live: "https://app.supademo.com/embed/cmgpwgru8052eiyrork3zy7fz?embed_v=2&utm_source=embed",
+    featured: false,
     color: "from-purple-500 to-pink-500"
   },
   {
     id: 2,
-    title: "Immersive E-Commerce",
-    category: "E-Commerce",
-    description: "Next-generation shopping experience with 3D product visualization and AR integration",
-    longDescription: "Revolutionary e-commerce platform featuring 3D product models, augmented reality try-on experiences, and seamless checkout flows. Optimized for conversion and user engagement.",
-    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tech: ["Next.js", "Three.js", "WebXR", "Stripe", "Prisma", "Vercel"],
+    title: "AC Trend Analyser",
+    category: "Analytics",
+    description: "Interactive React tool for analyzing election trends with Sankey diagrams, dynamic tables, and customizable exports.",
+    longDescription: "Assembly Constituency Trend Analyzer – An interactive React-based tool for visualizing election trends using Sankey diagrams, dynamic tables, and bucket-based visualizations. It features advanced filtering, sorting, and state management with Zustand, allowing users to customize analyses, save presets, and export detailed reports as PDFs.",
+    image: "https://appsfortableau.infotopics.com/wp-content/uploads/2018/06/sankey_appsfortableau_screen.png",
+    tech: ["React", "TypeScript", "Next.js", "Tailwind CSS", "D3-Sankey", "Vite","Zustand","MUI" ,"Pdf"],
     github: "#",
-    live: "#",
-    featured: true,
+    live: "https://app.supademo.com/embed/cmguovhqa3ugzyzgy71ddevzb?embed_v=2&utm_source=embed",
+    featured: false,
     color: "from-cyan-500 to-blue-500"
   },
   {
@@ -47,45 +47,6 @@ const projects = [
     featured: false,
     color: "from-orange-500 to-red-500"
   },
-  {
-    id: 4,
-    title: "FinTech Mobile App",
-    category: "Mobile App",
-    description: "Secure financial management app with biometric authentication and real-time trading",
-    longDescription: "A comprehensive financial management application featuring secure transactions, real-time market data, and advanced portfolio analytics with beautiful, intuitive design.",
-    image: "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tech: ["React Native", "TypeScript", "Redux", "Firebase", "Plaid API"],
-    github: "#",
-    live: "#",
-    featured: false,
-    color: "from-green-500 to-emerald-500"
-  },
-  {
-    id: 5,
-    title: "AI Content Generator",
-    category: "AI Platform",
-    description: "Advanced AI-powered content creation platform with natural language processing",
-    longDescription: "Cutting-edge AI platform that generates high-quality content using advanced machine learning models, featuring intuitive interfaces and powerful customization options.",
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tech: ["Python", "TensorFlow", "React", "FastAPI", "Docker", "AWS"],
-    github: "#",
-    live: "#",
-    featured: false,
-    color: "from-indigo-500 to-purple-500"
-  },
-  {
-    id: 6,
-    title: "Social Media Analytics",
-    category: "Analytics",
-    description: "Comprehensive social media analytics platform with sentiment analysis and trend prediction",
-    longDescription: "Advanced analytics platform providing deep insights into social media performance, audience behavior, and content optimization strategies with beautiful data visualizations.",
-    image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    tech: ["Angular", "Chart.js", "Python", "MongoDB", "Redis", "Docker"],
-    github: "#",
-    live: "#",
-    featured: false,
-    color: "from-pink-500 to-rose-500"
-  }
 ];
 
 export function WorkSection() {
@@ -93,7 +54,7 @@ export function WorkSection() {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const [filter, setFilter] = useState('all');
 
-  const categories = ['all', 'SaaS Platform', 'E-Commerce', 'Portfolio', 'Mobile App', 'AI Platform', 'Analytics'];
+  const categories = ['all', 'Dashboard' ,'Analytics'];
   
   const filteredProjects = filter === 'all' 
     ? projects 
@@ -152,8 +113,19 @@ export function WorkSection() {
   };
 
   return (
-    <section ref={sectionRef} id="work" className="py-32 relative overflow-hidden">
+    <section ref={sectionRef} id="work" className=" relative overflow-hidden">
       <div className="container mx-auto px-6">
+        <div 
+  style={{
+    position: 'relative',
+    boxSizing: 'content-box',
+    maxHeight: '80vh',
+    width: '100%',
+    aspectRatio: '2.1915621436716077',
+    padding: '40px 0 40px 0'
+  }}
+>
+</div>
         {/* Section Header */}
         <motion.div
           className="text-center mb-20"
@@ -227,6 +199,8 @@ export function WorkSection() {
                       size="sm"
                       className="glass border border-white/20 text-white hover:bg-white/20"
                       data-cursor-hover
+                      onClick={()=>window.open(project.github,"_blank")}
+
                     >
                       <Github className="w-4 h-4" />
                     </Button>
@@ -234,6 +208,7 @@ export function WorkSection() {
                       size="sm"
                       className="glass border border-white/20 text-white hover:bg-white/20"
                       data-cursor-hover
+                      onClick={()=>window.open(project.live,"_blank")}
                     >
                       <ExternalLink className="w-4 h-4" />
                     </Button>
@@ -297,7 +272,7 @@ export function WorkSection() {
         </div>
 
         {/* View All Projects Button */}
-        <motion.div
+        {/* <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -313,7 +288,7 @@ export function WorkSection() {
             View All Projects
             <ExternalLink className="w-5 h-5 ml-2" />
           </Button>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Project Detail Modal */}
@@ -397,6 +372,8 @@ export function WorkSection() {
                   <Button
                     className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0"
                     data-cursor-hover
+                      onClick={()=>window.open(selectedProject.live,'_blank')}
+
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     View Live Site
@@ -405,6 +382,8 @@ export function WorkSection() {
                     variant="outline"
                     className="flex-1 glass border border-white/20 text-white hover:bg-white/10"
                     data-cursor-hover
+                      onClick={()=>window.open(selectedProject.github,"_blank")}
+
                   >
                     <Github className="w-4 h-4 mr-2" />
                     View Code

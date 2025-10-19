@@ -1,22 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
-import anime from 'animejs';
-import { ChevronDown, Github, Linkedin, Mail, Download, ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import anime from "animejs";
+import {
+  ChevronDown,
+  Github,
+  Linkedin,
+  Mail,
+  Download,
+  ExternalLink,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   const textRef = useRef<HTMLHeadingElement>(null);
   const morphingTextRef = useRef<HTMLDivElement>(null);
   const [currentText, setCurrentText] = useState(0);
-  
-  const morphingTexts = [
-    "Frontend Developer",
-    "UI/UX Designer", 
-    "Creative Coder",
-    "Digital Artist"
-  ];
+
+  const morphingTexts = ["Frontend Developer", "Debugger", "UI/UX"];
 
   useEffect(() => {
     // Morphing text animation
@@ -27,30 +29,38 @@ export function HeroSection() {
     // Animate main title with liquid effect
     if (textRef.current) {
       const textWrapper = textRef.current;
-      textWrapper.innerHTML = textWrapper.textContent?.replace(/\S/g, "<span class='letter inline-block'>$&</span>") || '';
+      textWrapper.innerHTML =
+        textWrapper.textContent?.replace(
+          /\S/g,
+          "<span class='letter inline-block'>$&</span>"
+        ) || "";
 
-      anime.timeline()
+      anime
+        .timeline()
         .add({
-          targets: '.letter',
+          targets: ".letter",
           scale: [0, 1],
           opacity: [0, 1],
           translateZ: 0,
           rotateY: [-90, 0],
           easing: "easeOutExpo",
           duration: 1200,
-          delay: (el, i) => 100 * i
+          delay: (el, i) => 100 * i,
         })
-        .add({
-          targets: '.letter',
-          rotateX: [0, 360],
-          duration: 800,
-          delay: (el, i) => 50 * i,
-          easing: "easeInOutSine"
-        }, '-=600');
+        .add(
+          {
+            targets: ".letter",
+            rotateX: [0, 360],
+            duration: 800,
+            delay: (el, i) => 50 * i,
+            easing: "easeInOutSine",
+          },
+          "-=600"
+        );
     }
 
     // Floating elements animation
-    const floatingElements = document.querySelectorAll('.floating-element');
+    const floatingElements = document.querySelectorAll(".floating-element");
     floatingElements.forEach((element, index) => {
       anime({
         targets: element,
@@ -59,9 +69,9 @@ export function HeroSection() {
         rotate: [0, Math.random() * 10 - 5, 0],
         scale: [1, 1.1, 1],
         duration: 4000 + index * 500,
-        easing: 'easeInOutSine',
+        easing: "easeInOutSine",
         loop: true,
-        delay: index * 200
+        delay: index * 200,
       });
     });
 
@@ -84,7 +94,7 @@ export function HeroSection() {
         </div>
 
         {/* Status Badge */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.8 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -94,12 +104,12 @@ export function HeroSection() {
             <div className="w-2 h-2 bg-green-400 rounded-full pulse-glow" />
             <span className="text-sm font-medium text-white/80">Available for work</span>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Morphing Role Text */}
         <motion.div
           ref={morphingTextRef}
-          className="mb-6 h-8"
+          className="mb-4 h-8 mt-20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -120,9 +130,9 @@ export function HeroSection() {
         <h1
           ref={textRef}
           className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 text-white text-glow"
-          style={{ fontFamily: 'Inter, sans-serif' }}
+          style={{ fontFamily: "Inter, sans-serif" }}
         >
-          Alex Chen
+          Ebenezer
         </h1>
 
         {/* Subtitle with typewriter effect */}
@@ -132,8 +142,8 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.5 }}
         >
-          Crafting extraordinary digital experiences with cutting-edge technologies, 
-          stunning animations, and pixel-perfect design that captivates and converts.
+          I enjoy crafting sleek, responsive websites and I’m pretty good at
+          hunting down and fixing bugs
         </motion.p>
 
         {/* CTA Buttons */}
@@ -150,12 +160,13 @@ export function HeroSection() {
             data-magnetic
           >
             <span className="relative z-10 flex items-center gap-2">
-              View My Work
+              <a href="#work"> View My Work</a>
+             
               <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Button>
-          
+
           <Button
             variant="outline"
             size="lg"
@@ -164,7 +175,13 @@ export function HeroSection() {
             data-magnetic
           >
             <span className="flex items-center gap-2">
-              Download CV
+              <a
+                href="/ebenezer_fe.pdf"
+                download="Ebenezer_L_Resume.pdf"
+                className="btn"
+              >
+                Download CV
+              </a>
               <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
             </span>
           </Button>
@@ -178,9 +195,21 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 2.5 }}
         >
           {[
-            { icon: Github, href: '#', label: 'GitHub' },
-            { icon: Linkedin, href: '#', label: 'LinkedIn' },
-            { icon: Mail, href: '#', label: 'Email' }
+            {
+              icon: Github,
+              href: "https://github.com/akaebe",
+              label: "GitHub",
+            },
+            {
+              icon: Linkedin,
+              href: "https://www.linkedin.com/in/ebenezer-livingstone-508286257 ",
+              label: "LinkedIn",
+            },
+            {
+              icon: Mail,
+              href: "https://mail.google.com/mail/?view=cm&fs=1&to=ebelivingstone0@example.com",
+              label: "Email",
+            },
           ].map((social, index) => (
             <motion.a
               key={index}
@@ -199,7 +228,7 @@ export function HeroSection() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        {/* <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -213,7 +242,7 @@ export function HeroSection() {
             <span className="text-sm font-medium">Scroll to explore</span>
             <ChevronDown className="w-6 h-6" />
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Animated background elements */}

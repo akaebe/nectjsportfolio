@@ -7,44 +7,35 @@ import { Calendar, MapPin, Coffee, Code, Award, Users, Zap, Heart } from 'lucide
 
 const timeline = [
   {
-    year: "2024",
-    title: "Senior Frontend Architect",
-    company: "TechCorp Inc.",
-    description: "Leading a team of 8 developers, architecting scalable frontend solutions for enterprise clients",
+    year: "2025/01",
+    title: "Frontend Developer Intern",
+    company: "The Populous Empowerment Network (PEN).",
+    description: "Developing and maintaining scalable web applications•	 using Next.js, TypeScript, and Redux Toolkit.",
     icon: Code,
-    achievements: ["Led 15+ successful projects", "Mentored 12 junior developers", "Increased team productivity by 40%"]
+    achievements: ["Implemented React Leaflet for TamilNadu Map visualization", "Implemented chart js for data visualization", ]
   },
+ 
   {
-    year: "2022",
-    title: "Lead Frontend Developer",
-    company: "StartupHub",
-    description: "Spearheaded the development of award-winning web applications with cutting-edge technologies",
-    icon: Award,
-    achievements: ["Won 'Best UI/UX Design' award", "Built 20+ responsive applications", "Implemented CI/CD pipelines"]
-  },
-  {
-    year: "2020",
-    title: "Frontend Developer",
-    company: "WebSolutions",
-    description: "Developed interactive web experiences and collaborated with cross-functional teams",
+    year: "2024/02",
+    title: "Project Intern",
+    company: "Combat Vehicles Research & Development Establishment(CVRDE)",
+    description: "Developed a multi-object tracker for combat vehicles in YoloV9 using Ultralytics",
     icon: Users,
-    achievements: ["Delivered 30+ client projects", "Reduced load times by 60%", "Implemented accessibility standards"]
+    achievements: ["Utilized Roboflow to train custom datasets", "Integrated Byte tracker for Multi Object Tracker"]
   },
   {
-    year: "2019",
-    title: "Computer Science Graduate",
-    company: "Tech University",
-    description: "Graduated Summa Cum Laude with specialization in Human-Computer Interaction",
+    year: "2024",
+    title: "Information Technology Graduate",
+    company: "Panimalar Engineering College",
+    // description: "Graduated Summa Cum Laude with specialization in Human-Computer Interaction",
     icon: Calendar,
-    achievements: ["GPA: 3.9/4.0", "Dean's List 4 semesters", "Published 2 research papers"]
+    achievements: ["GPA: 8.68/10",  "Published 2 research papers"]
   }
 ];
 
 const personalStats = [
-  { icon: Coffee, label: "Cups of Coffee", value: "2,847", color: "from-amber-500 to-orange-500" },
-  { icon: Code, label: "Lines of Code", value: "500K+", color: "from-green-500 to-emerald-500" },
-  { icon: Zap, label: "Projects Completed", value: "127", color: "from-blue-500 to-cyan-500" },
-  { icon: Heart, label: "Happy Clients", value: "98%", color: "from-pink-500 to-rose-500" }
+  { icon: Coffee, label: "Cups of Coffee", value: "654", color: "from-amber-500 to-orange-500" },
+  { icon: Code, label: "Lines of Code", value: "5K+", color: "from-green-500 to-emerald-500" },
 ];
 
 export function AboutSection() {
@@ -129,7 +120,7 @@ export function AboutSection() {
             About Me
           </motion.h2>
           <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            Passionate about creating digital experiences that inspire and engage users worldwide
+          I love learning, experimenting with ideas, and creating things that make an impact.
           </p>
         </motion.div>
 
@@ -143,30 +134,26 @@ export function AboutSection() {
             >
               <div className="prose prose-lg prose-invert">
                 <p className="text-lg leading-relaxed mb-6 text-white/80">
-                  I'm a passionate frontend developer with over 5 years of experience crafting digital experiences 
-                  that combine beautiful design with cutting-edge technology. My expertise lies in creating 
-                  interactive and performant web applications that push the boundaries of what's possible on the web.
+                Experienced Frontend Developer with professional experience in modern web technologies including Next.js, TypeScript, and Redux. 
+      
                 </p>
                 <p className="text-lg leading-relaxed mb-6 text-white/80">
-                  When I'm not coding, you can find me exploring new animation techniques, contributing to 
-                  open-source projects, or sharing knowledge with the developer community. I believe in the 
-                  power of continuous learning and staying updated with the latest trends in web development.
+                Currently contributing to scalable applications at The Populous Empowerment Network, with expertise in React ecosystem, state management, and full-stack development.
+                  
                 </p>
                 <p className="text-lg leading-relaxed text-white/80">
-                  My approach combines technical excellence with creative vision, ensuring that every project 
-                  not only functions flawlessly but also delivers an exceptional user experience that leaves 
-                  a lasting impression.
+                Seeking to leverage advanced frontend skills and proven track record in delivering high-quality applications to drive innovation in a dynamic development environment.
                 </p>
               </div>
 
               {/* Skills Tags */}
               <div className="flex flex-wrap gap-3 mt-8">
                 {[
-                  'Creative Problem Solving', 
+                  'Problem Solving', 
                   'Performance Optimization', 
-                  'Team Leadership', 
-                  'Mentoring',
-                  'UI/UX Design',
+                  'Collaboration', 
+                  'Team Player',
+                  'Debugger',
                   'Agile Development'
                 ].map((trait) => (
                   <motion.span
@@ -258,7 +245,7 @@ export function AboutSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="glass rounded-2xl p-8 border border-white/10 max-w-2xl mx-auto">
+          {/* <div className="glass rounded-2xl p-8 border border-white/10 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold mb-4 text-white">Let's Create Something Amazing</h3>
             <p className="text-white/70 mb-6 leading-relaxed">
               I'm always excited to work on new projects and collaborate with talented individuals. 
@@ -273,7 +260,7 @@ export function AboutSection() {
             >
               Get In Touch
             </motion.button>
-          </div>
+          </div> */}
         </motion.div>
       </div>
 
