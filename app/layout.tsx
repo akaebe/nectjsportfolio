@@ -12,36 +12,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Alex Chen - Frontend Developer & Creative Technologist',
+  title: 'Ebenezer - Frontend Developer & Creative Technologist',
   description: 'Award-winning frontend developer specializing in cutting-edge web experiences, advanced animations, and innovative user interfaces.',
   keywords: 'frontend developer, web developer, React, Next.js, TypeScript, animations, UI/UX',
-  authors: [{ name: 'Alex Chen' }],
-  creator: 'Alex Chen',
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://alexchen.dev',
-    title: 'Alex Chen - Frontend Developer & Creative Technologist',
-    description: 'Award-winning frontend developer specializing in cutting-edge web experiences',
-    siteName: 'Alex Chen Portfolio',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Alex Chen - Frontend Developer',
-    description: 'Award-winning frontend developer specializing in cutting-edge web experiences',
-    creator: '@alexchen_dev',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+  authors: [{ name: 'Ebenezer' }],
+  creator: 'Ebenezer',
+
 };
 
 export default function RootLayout({
