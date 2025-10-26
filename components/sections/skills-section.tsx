@@ -1,38 +1,44 @@
 "use client";
-
+import { FaReact } from "react-icons/fa";
+import { TbBrandNextjs } from "react-icons/tb";
+import { SiTypescript ,SiRedux ,SiReactquery } from "react-icons/si";
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import anime from 'animejs';
+import { ReactQueryIcon } from "../ui/rtkicon";
+import { ZustandIcon } from "../ui/ZustandIcon";
+import { FaGithub } from "react-icons/fa";
+import {  AzureIcon, McpIcon, MongodbIcon, MysqlIcon, NodejsIcon, Postmanicon, PrismaIcon, PythonIcon, VercelIcon, VitejsIcon } from "../ui/NodeIcon";
 
 const skillCategories = [
   {
     title: "Frontend Development",
-    icon: "🎨",
+    icon:  <img src="/ux.png" alt="Frontend Icon" className="w-8 h-8" />,
     skills: [
-      { name: "React/Next.js", level: 98, icon: "⚛️" },
-      { name: "TypeScript", level: 95, icon: "📘" },
-      { name: "Tanstack/React Query", level: 60, icon: "💚" },
-      { name: "Redux/Zustand", level: 80, icon: "🧡" },
+      { name: "React/Next.js", level: 98, icon: <div className="flex gap-2"><FaReact color="#61DBFB" /><TbBrandNextjs  color="#0070F3"/></div> },
+      { name: "TypeScript", level: 95, icon: <SiTypescript color="#3178C6" /> },
+      { name: "Tanstack/React Query", level: 60, icon: <div className="flex gap-2"><ReactQueryIcon/></div> },
+      { name: "Redux/Zustand", level: 80, icon: <div className="flex gap-2"><SiRedux color="#00a7e5"/><ZustandIcon/></div> },
     ]
   },
   {
     title: "Backend & Database",
-    icon: "⚙️",
+    icon:  <img src="/browser.png" alt="Backend Icon" className="w-8 h-8" />,
     skills: [
-      { name: "Node.js", level: 87, icon: "🟢" },
-      { name: "Python", level: 60, icon: "🐍" },
-      { name: "MySQL", level: 65, icon: "🐘" },
-      { name: "MongoDB/Prisma", level: 80, icon: "🍃" },
+      { name: "Node.js", level: 87, icon: <NodejsIcon/> },
+      { name: "Python", level: 60, icon: <PythonIcon/> },
+      { name: "MySQL", level: 65, icon: <MysqlIcon/> },
+      { name: "MongoDB/Prisma", level: 80, icon: <div className="flex gap-2"><MongodbIcon/><PrismaIcon/></div> },
     ]
   },
   {
     title: "Tools & Platforms",
-    icon: "🛠️",
+    icon:  <img src="/repair.png" alt="Tools Icon" className="w-8 h-8" />,
     skills: [
-      { name: "Vite", level: 83, icon: "🐳" },
-      { name: "Azure/Vercel", level: 56, icon: "☁️" },
-      { name: "Postman/MCP", level: 91, icon: "🎯" },
-      { name: "Git/GitHub", level: 94, icon: "📚" },
+      { name: "Vite", level: 83, icon: <VitejsIcon/> },
+      { name: "Azure/Vercel", level: 56, icon: <div className="flex gap-2"><AzureIcon/><VercelIcon/></div> },
+      { name: "Postman/MCP", level: 91, icon: <div className="flex gap-2"> <Postmanicon/><McpIcon/></div> },
+      { name: "Git/GitHub", level: 94, icon: <FaGithub /> },
     ]
   }
 ];
@@ -101,7 +107,7 @@ export function SkillsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="skills" className="py-32 relative overflow-hidden">
+    <section ref={sectionRef} id="skills" className="pt-32 pb-12 relative overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div
@@ -218,7 +224,7 @@ export function SkillsSection() {
         </div> */}
 
         {/* Interactive Skill Visualization */}
-        <motion.div
+        {/* <motion.div
           className="mt-20 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -237,14 +243,14 @@ export function SkillsSection() {
                 <div className="text-4xl font-black text-pink-400 mb-2">7+</div>
                 <div className="text-sm text-white/60">Projects Completed</div>
               </div>
-              {/* <div className="w-px h-12 bg-white/20" /> */}
-              {/* <div className="text-center">
+              <div className="w-px h-12 bg-white/20" /> 
+               <div className="text-center">
                 <div className="text-4xl font-black text-cyan-400 mb-2">100%</div>
                 <div className="text-sm text-white/60">Client Satisfaction</div>
-              </div> */}
+              </div> 
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Background Elements */}
