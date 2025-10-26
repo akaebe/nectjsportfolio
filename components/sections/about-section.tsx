@@ -124,108 +124,50 @@ export function AboutSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-          {/* Personal Information */}
-          <div className="personal-info space-y-8">
-            <motion.div
-              className="glass rounded-2xl p-8 border border-white/10"
-              whileHover={{ scale: 1.02, y: -5 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="prose prose-lg prose-invert">
-                <p className="text-lg leading-relaxed mb-6 text-white/80">
-                Experienced Frontend Developer with professional experience in modern web technologies including Next.js, TypeScript, and Redux. 
-      
-                </p>
-                <p className="text-lg leading-relaxed mb-6 text-white/80">
-                Currently contributing to scalable applications at The Populous Empowerment Network, with expertise in React ecosystem, state management, and full-stack development.
-                  
-                </p>
-                <p className="text-lg leading-relaxed text-white/80">
-                Seeking to leverage advanced frontend skills and proven track record in delivering high-quality applications to drive innovation in a dynamic development environment.
-                </p>
-              </div>
-
-              {/* Skills Tags */}
-              <div className="flex flex-wrap gap-3 mt-8">
-                {[
-                  'Problem Solving', 
-                  'Performance Optimization', 
-                  'Collaboration', 
-                  'Team Player',
-                  'Debugger',
-                  'Agile Development'
-                ].map((trait) => (
-                  <motion.span
-                    key={trait}
-                    className="px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {trait}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Personal Stats */}
-            <div className="grid grid-cols-2 gap-4">
-              {personalStats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  className="stat-card glass rounded-xl p-6 border border-white/10 text-center hover:border-white/20 transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  data-cursor-hover
-                >
-                  <div className={`inline-flex p-3 rounded-full bg-gradient-to-r ${stat.color} mb-3`}>
-                    <stat.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-sm text-white/60">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Timeline */}
+        {/* Timeline - Full Width */}
+        <div className="max-w-5xl mx-auto">
           <div ref={timelineRef} className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 top-0 w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-cyan-500 timeline-line" style={{ height: '0%' }} />
+            {/* Timeline Line - Responsive positioning */}
+            <div className="absolute left-4 sm:left-6 md:left-8 top-0 w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-cyan-500 timeline-line" style={{ height: '0%' }} />
             
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-10 md:space-y-12">
               {timeline.map((item, index) => (
                 <motion.div
                   key={item.year}
-                  className="timeline-item flex items-start gap-8 relative"
+                  className="timeline-item flex items-start gap-4 sm:gap-6 md:gap-8 relative"
                   style={{ opacity: 0 }}
                 >
-                  {/* Icon */}
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center relative z-10 shadow-lg shadow-purple-500/50">
-                    <item.icon className="w-7 h-7 text-white" />
+                  {/* Icon - Responsive sizing */}
+                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center relative z-10 shadow-lg shadow-purple-500/50">
+                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
                   </div>
                   
-                  {/* Content */}
-                  <div className="flex-1">
+                  {/* Content - Responsive padding and text */}
+                  <div className="flex-1 min-w-0">
                     <motion.div 
-                      className="glass rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300"
+                      className="glass rounded-xl p-4 sm:p-5 md:p-6 border border-white/10 hover:border-white/20 transition-all duration-300"
                       whileHover={{ scale: 1.02, x: 10 }}
                     >
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="text-lg font-bold text-purple-400">{item.year}</span>
-                        <span className="w-2 h-2 bg-white/40 rounded-full" />
-                        <span className="text-sm text-white/60 font-medium">{item.company}</span>
+                      {/* Header - Responsive layout */}
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
+                        <span className="text-base sm:text-lg font-bold text-purple-400">{item.year}</span>
+                        <span className="hidden sm:block w-2 h-2 bg-white/40 rounded-full" />
+                        <span className="text-xs sm:text-sm text-white/60 font-medium break-words">{item.company}</span>
                       </div>
                       
-                      <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
-                      <p className="text-white/70 leading-relaxed mb-4">{item.description}</p>
+                      {/* Title - Responsive text size */}
+                      <h3 className="text-lg sm:text-xl md:text-xl font-bold mb-2 sm:mb-3 text-white break-words">{item.title}</h3>
                       
-                      {/* Achievements */}
-                      <div className="space-y-2">
-                        <h4 className="text-sm font-semibold text-purple-300 mb-2">Key Achievements:</h4>
+                      {/* Description - Responsive text */}
+                      <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-3 sm:mb-4 break-words">{item.description}</p>
+                      
+                      {/* Achievements - Responsive spacing */}
+                      <div className="space-y-1.5 sm:space-y-2">
+                        <h4 className="text-xs sm:text-sm font-semibold text-purple-300 mb-2">Key Achievements:</h4>
                         {item.achievements.map((achievement, i) => (
-                          <div key={i} className="flex items-center gap-2 text-sm text-white/60">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full" />
-                            {achievement}
+                          <div key={i} className="flex items-start gap-2 text-xs sm:text-sm text-white/60">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex-shrink-0 mt-1.5" />
+                            <span className="break-words">{achievement}</span>
                           </div>
                         ))}
                       </div>
@@ -236,32 +178,7 @@ export function AboutSection() {
             </div>
           </div>
         </div>
-
-        {/* Call to Action */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-        >
-          {/* <div className="glass rounded-2xl p-8 border border-white/10 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-white">Let's Create Something Amazing</h3>
-            <p className="text-white/70 mb-6 leading-relaxed">
-              I'm always excited to work on new projects and collaborate with talented individuals. 
-              Whether you have a specific idea in mind or just want to explore possibilities, I'd love to hear from you.
-            </p>
-            <motion.button
-              className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold rounded-full transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              data-cursor-hover
-              data-magnetic
-            >
-              Get In Touch
-            </motion.button>
-          </div> */}
-        </motion.div>
+    
       </div>
 
       {/* Background Elements */}

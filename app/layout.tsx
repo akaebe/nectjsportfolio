@@ -2,8 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
-import { MagneticCursor } from '@/components/magnetic-cursor';
 import { ScrollProgress } from '@/components/scroll-progress';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -12,11 +12,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Ebenezer - Frontend Developer & Creative Technologist',
-  description: 'Award-winning frontend developer specializing in cutting-edge web experiences, advanced animations, and innovative user interfaces.',
+  title: 'Ebenezer - Frontend Developer',
+  description: "I enjoy turning ideas into smooth, eye-catching web experiences that people love to interact with.",
   keywords: 'frontend developer, web developer, React, Next.js, TypeScript, animations, UI/UX',
-  authors: [{ name: 'Ebenezer' }],
-  creator: 'Ebenezer',
+    icons: {
+    icon: "/letter-e.png",
+  },
 
 };
 
@@ -36,6 +37,7 @@ export default function RootLayout({
         >
           {/* <MagneticCursor /> */}
           <ScrollProgress />
+           <Analytics />
           {children}
         </ThemeProvider>
       </body>

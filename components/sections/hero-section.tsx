@@ -18,7 +18,7 @@ export function HeroSection() {
   const morphingTextRef = useRef<HTMLDivElement>(null);
   const [currentText, setCurrentText] = useState(0);
 
-  const morphingTexts = ["Frontend Developer", "Debugger", "UI/UX"];
+  const morphingTexts = ["Frontend Developer", "Debugger"];
 
   useEffect(() => {
     // Morphing text animation
