@@ -5,14 +5,7 @@ import { motion } from 'framer-motion';
 import anime from 'animejs';
 import { Calendar, MapPin, Coffee, Code, Award, Users, Zap, Heart } from 'lucide-react';
 
-const timeline = [{
-    year: "2025/11",
-    title: "Software Developer - Consultant",
-    company: "The Populous Empowerment Network (PEN).",
-    description: " Delivered production work spanning RESTful APIs, JWT/RBAC auth, Prisma ORM, ETL data migration, and Puppeteer-based PDF generation.",
-    icon: Code,
-    achievements: [" Designed and built secure RESTful APIs with JWT authentication and RBAC","Architected SQL schemas via Prisma ORM for optimised query performance.","Implemented Puppeteer-based server-side PDF generation supporting bilingual output (Tamil & English) for clientfacing exports"]
-  },
+const timeline = [
   {
     year: "2025/01",
     title: "Frontend Developer Intern",

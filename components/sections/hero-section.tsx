@@ -176,7 +176,7 @@ export function HeroSection() {
           >
             <span className="flex items-center gap-2">
               <a
-                href="\Ebenezer_sd_fina.pdf"
+                href="/ebenezer_fe.pdf"
                 download="Ebenezer_L_Resume.pdf"
                 className="btn"
               >
