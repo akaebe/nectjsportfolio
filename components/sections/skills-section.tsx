@@ -26,9 +26,8 @@ const skillCategories = [
     icon:  <img src="/browser.png" alt="Backend Icon" className="w-8 h-8" />,
     skills: [
       { name: "Node.js", level: 87, icon: <NodejsIcon/> },
-      { name: "Python", level: 60, icon: <PythonIcon/> },
+      { name: "Python", level: 50, icon: <PythonIcon/> },
       { name: "MySQL", level: 65, icon: <MysqlIcon/> },
-      { name: "MongoDB/Prisma", level: 80, icon: <div className="flex gap-2"><MongodbIcon/><PrismaIcon/></div> },
     ]
   },
   {
